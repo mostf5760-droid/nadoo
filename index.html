@@ -10,63 +10,85 @@
 </head>
 <body>
 
-  <!-- ===== Navbar ===== -->
- <header class="navbar">
-  <div class="logo">NADO</div>
+  <!-- ================= Navbar ================= -->
+  <header class="navbar">
+    <div class="logo">NADO</div>
 
-  <nav class="nav-links">
-    <a href="#">الرئيسية</a>
-    <a href="#products">المتجر</a>
-    <a href="#">عن NADO</a>
-    <a href="#">تواصل</a>
-  </nav>
+    <nav class="nav-links">
+      <a href="#">الرئيسية</a>
+      <a href="#products">المتجر</a>
+      <a href="#">عن NADO</a>
+      <a href="#">تواصل</a>
+    </nav>
 
-  <div class="cart">
-    🛒 <span id="cart-count">0</span>
-  </div>
-</header>
+    <div class="cart">
+      🛒 <span id="cart-count">0</span>
+    </div>
+  </header>
 
-  <!-- ===== Hero Section ===== -->
+  <!-- ================= Hero ================= -->
   <section class="hero">
     <h1>NADO LIBYA</h1>
     <p>براند ملابس | قوة | أناقة</p>
-    <button>تصفح المتجر</button>
+
+    <button onclick="document.getElementById('products').scrollIntoView({ behavior: 'smooth' })">
+      تصفح المتجر
+    </button>
   </section>
-<!-- ===== Products Section ===== -->
-<section class="products" id="products">
 
-  <h2>منتجات NADO</h2>
+  <!-- ================= Products ================= -->
+  <section class="products" id="products">
+    <h2>منتجات NADO</h2>
 
-  <div class="products-grid">
+    <div class="products-grid">
 
-    <div class="product-card">
-      <img src="assets/images/product1.jpg" alt="NADO Product">
-      <h3>تيشيرت NADO</h3>
-      <p>120 د.ل</p>
-      <button>أضف للسلة</button>
+      <!-- Product 1 -->
+      <div class="product-card" data-name="كاب NADO" data-price="80">
+        <img src="assets/images/product1.jpg" alt="NADO Cap">
+        <h3>كاب NADO</h3>
+        <p>80 د.ل</p>
+        <button>أضف للسلة</button>
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card" data-name="هودي NADO" data-price="250">
+        <img src="assets/images/product2.jpg" alt="NADO Hoodie">
+        <h3>هودي NADO</h3>
+        <p>250 د.ل</p>
+        <button>أضف للسلة</button>
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card" data-name="تيشيرت NADO" data-price="120">
+        <img src="assets/images/product3.jpg" alt="NADO T-shirt">
+        <h3>تيشيرت NADO</h3>
+        <p>120 د.ل</p>
+        <button>أضف للسلة</button>
+      </div>
+
     </div>
+  </section>
 
-    <div class="product-card">
-      <img src="assets/images/product2.jpg" alt="NADO Product">
-      <h3>هودي NADO</h3>
-      <p>250 د.ل</p>
-      <button>أضف للسلة</button>
-    </div>
-
-    <div class="product-card">
-      <img src="assets/images/product3.jpg" alt="NADO Product">
-      <h3>كاب NADO</h3>
-      <p>80 د.ل</p>
-      <button>أضف للسلة</button>
-    </div>
-
-  </div>
-</section>
-
-  <!-- ===== Footer ===== -->
+  <!-- ================= Footer ================= -->
   <footer>
     <p>© 2026 NADO - جميع الحقوق محفوظة</p>
   </footer>
+
+  <!-- ================= Cart Popup ================= -->
+  <div class="cart-overlay" id="cartOverlay">
+    <div class="cart-box">
+      <h2>سلة المشتريات</h2>
+
+      <div class="cart-items" id="cartItems">
+        <!-- منتجات السلة -->
+      </div>
+
+      <div class="cart-footer">
+        <p>الإجمالي: <span id="cartTotal">0</span> د.ل</p>
+        <button id="closeCart">إغلاق</button>
+      </div>
+    </div>
+  </div>
 
   <!-- JS -->
   <script src="js/main.js"></script>
